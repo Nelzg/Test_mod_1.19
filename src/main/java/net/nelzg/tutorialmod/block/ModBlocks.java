@@ -13,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.nelzg.tutorialmod.TutorialMod;
+import net.nelzg.tutorialmod.block.custom.JumpyBlock;
 import net.nelzg.tutorialmod.item.ModCreativeModeTab;
 import net.nelzg.tutorialmod.item.ModItems;
 
@@ -41,6 +42,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> NETHERRACK_ZIRCON_ORE = registerBlock("netherrack_zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
                     .requiresCorrectToolForDrops(), UniformInt.of(3, 7)),  ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
+            () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
+                    .requiresCorrectToolForDrops()),  ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
