@@ -12,7 +12,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nelzg.tutorialmod.block.ModBlocks;
 import net.nelzg.tutorialmod.item.ModItems;
+import net.nelzg.tutorialmod.painting.ModPaintings;
 import net.nelzg.tutorialmod.villager.ModVillagers;
+import net.nelzg.tutorialmod.world.feature.ModConfiguredFeatures;
+import net.nelzg.tutorialmod.world.feature.ModPlacedFeatures;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -29,6 +32,10 @@ public class TutorialMod
         ModBlocks.register(modEventBus);
 
         ModVillagers.register(modEventBus);
+        ModPaintings.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
