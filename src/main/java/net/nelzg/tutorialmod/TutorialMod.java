@@ -1,8 +1,6 @@
 package net.nelzg.tutorialmod;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,6 +10,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nelzg.tutorialmod.block.ModBlocks;
 import net.nelzg.tutorialmod.item.ModItems;
+import net.nelzg.tutorialmod.networking.ModMessages;
 import net.nelzg.tutorialmod.painting.ModPaintings;
 import net.nelzg.tutorialmod.villager.ModVillagers;
 import net.nelzg.tutorialmod.world.feature.ModConfiguredFeatures;
@@ -46,6 +45,8 @@ public class TutorialMod
         event.enqueueWork(() -> {
             ModVillagers.registerPOIs();
         });
+
+        ModMessages.register();
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
