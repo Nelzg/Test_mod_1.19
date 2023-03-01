@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +18,7 @@ import net.nelzg.tutorialmod.TutorialMod;
 import net.nelzg.tutorialmod.block.custom.BlueberryCropBlock;
 import net.nelzg.tutorialmod.block.custom.JumpyBlock;
 import net.nelzg.tutorialmod.block.custom.ZirconLampBlock;
+import net.nelzg.tutorialmod.fluid.ModFluids;
 import net.nelzg.tutorialmod.item.ModCreativeModeTab;
 import net.nelzg.tutorialmod.item.ModItems;
 
@@ -56,6 +58,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
             () -> new BlueberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+    public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

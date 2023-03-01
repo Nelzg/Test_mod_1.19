@@ -1,6 +1,8 @@
 package net.nelzg.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -9,6 +11,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nelzg.tutorialmod.block.ModBlocks;
+import net.nelzg.tutorialmod.fluid.ModFluidTypes;
+import net.nelzg.tutorialmod.fluid.ModFluids;
 import net.nelzg.tutorialmod.item.ModItems;
 import net.nelzg.tutorialmod.networking.ModMessages;
 import net.nelzg.tutorialmod.painting.ModPaintings;
@@ -36,6 +40,9 @@ public class TutorialMod
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -43,17 +50,17 @@ public class TutorialMod
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ModMessages.register();
             ModVillagers.registerPOIs();
         });
-
-        ModMessages.register();
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
         }
     }
 }
