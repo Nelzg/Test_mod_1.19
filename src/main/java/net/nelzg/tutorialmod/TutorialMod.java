@@ -1,6 +1,7 @@
 package net.nelzg.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -11,11 +12,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nelzg.tutorialmod.block.ModBlocks;
+import net.nelzg.tutorialmod.block.entity.ModBlockEntities;
 import net.nelzg.tutorialmod.fluid.ModFluidTypes;
 import net.nelzg.tutorialmod.fluid.ModFluids;
 import net.nelzg.tutorialmod.item.ModItems;
 import net.nelzg.tutorialmod.networking.ModMessages;
 import net.nelzg.tutorialmod.painting.ModPaintings;
+import net.nelzg.tutorialmod.recipe.ModRecipes;
+import net.nelzg.tutorialmod.screen.GemInfusingStationScreen;
+import net.nelzg.tutorialmod.screen.ModMenuTypes;
 import net.nelzg.tutorialmod.villager.ModVillagers;
 import net.nelzg.tutorialmod.world.feature.ModConfiguredFeatures;
 import net.nelzg.tutorialmod.world.feature.ModPlacedFeatures;
@@ -43,6 +48,10 @@ public class TutorialMod
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
 
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -61,6 +70,8 @@ public class TutorialMod
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
+
+            MenuScreens.register(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), GemInfusingStationScreen::new);
         }
     }
 }
