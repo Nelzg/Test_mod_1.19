@@ -8,6 +8,7 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.nelzg.tutorialmod.TutorialMod;
 import net.nelzg.tutorialmod.networking.packet.DrinkWaterC2SPacket;
+import net.nelzg.tutorialmod.networking.packet.EnergySyncS2CPacket;
 import net.nelzg.tutorialmod.networking.packet.ExampleC2SPacket;
 import net.nelzg.tutorialmod.networking.packet.ThirstDataSyncS2CPacket;
 
@@ -47,6 +48,12 @@ public class ModMessages {
                 .encoder(ThirstDataSyncS2CPacket::toBytes)
                 .consumerMainThread(ThirstDataSyncS2CPacket::handle)
                 .add();
+
+        net.messageBuilder(EnergySyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(EnergySyncS2CPacket::new)
+                .encoder(EnergySyncS2CPacket::toBytes)
+                .consumerMainThread(EnergySyncS2CPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
@@ -55,6 +62,10 @@ public class ModMessages {
 
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player) {
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), message);
+    }
+
+    public static <MSG> void sendToClients(MSG message) {
+        INSTANCE.send(PacketDistributor.ALL.noArg(), message);
     }
 
 }
