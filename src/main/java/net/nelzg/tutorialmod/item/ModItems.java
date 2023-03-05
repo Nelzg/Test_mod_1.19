@@ -2,12 +2,14 @@ package net.nelzg.tutorialmod.item;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.nelzg.tutorialmod.TutorialMod;
 import net.nelzg.tutorialmod.block.ModBlocks;
+import net.nelzg.tutorialmod.entity.ModEntityTypes;
 import net.nelzg.tutorialmod.fluid.ModFluids;
 import net.nelzg.tutorialmod.item.custom.EightBallItem;
 
@@ -39,6 +41,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> KAUPENSWORD = ITEMS.register("kaupensword",
             () -> new SwordItem(Tiers.DIAMOND, 10, 5f,
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> CHOMPER_SPAWN_EGG = ITEMS.register("chomper_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.CHOMPER, 0x22b341, 0x19732e,
                     new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(64)));
 
     public static void register(IEventBus eventBus) {

@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nelzg.tutorialmod.block.ModBlocks;
 import net.nelzg.tutorialmod.block.entity.ModBlockEntities;
+import net.nelzg.tutorialmod.entity.ModEntityTypes;
+import net.nelzg.tutorialmod.entity.client.ChomperRenderer;
 import net.nelzg.tutorialmod.fluid.ModFluidTypes;
 import net.nelzg.tutorialmod.fluid.ModFluids;
 import net.nelzg.tutorialmod.item.ModItems;
@@ -25,6 +28,7 @@ import net.nelzg.tutorialmod.villager.ModVillagers;
 import net.nelzg.tutorialmod.world.feature.ModConfiguredFeatures;
 import net.nelzg.tutorialmod.world.feature.ModPlacedFeatures;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MOD_ID)
@@ -52,6 +56,9 @@ public class TutorialMod
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
 
+        ModEntityTypes.register(modEventBus);
+        GeckoLib.initialize();
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -72,6 +79,8 @@ public class TutorialMod
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
 
             MenuScreens.register(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), GemInfusingStationScreen::new);
+
+            EntityRenderers.register(ModEntityTypes.CHOMPER.get(), ChomperRenderer::new);
         }
     }
 }
