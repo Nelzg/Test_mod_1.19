@@ -9,6 +9,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.nelzg.tutorialmod.TutorialMod;
 import net.nelzg.tutorialmod.entity.custom.ChomperEntity;
+import net.nelzg.tutorialmod.entity.custom.IgorEntity;
+import net.nelzg.tutorialmod.entity.custom.SlavaEntity;
+import net.nelzg.tutorialmod.entity.custom.IliyaEntity;
+import net.nelzg.tutorialmod.entity.custom.RedBeastEntity;
 
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -19,6 +23,31 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(ChomperEntity::new, MobCategory.MONSTER)
                             .sized(0.4f, 1.5f)
                             .build(new ResourceLocation(TutorialMod.MOD_ID, "chomper").toString()));
+
+    public static final RegistryObject<EntityType<RedBeastEntity>> RED_BEAST =
+            ENTITY_TYPES.register("red_beast",
+                    () -> EntityType.Builder.of(RedBeastEntity::new, MobCategory.MONSTER)
+                            .sized(0.4f, 1.5f)
+                            .build(new ResourceLocation(TutorialMod.MOD_ID, "red_beast").toString()));
+
+    public static final RegistryObject<EntityType<IgorEntity>> IGOR =
+            ENTITY_TYPES.register("igor",
+                    () -> EntityType.Builder.of(IgorEntity::new, MobCategory.MONSTER)
+                            .sized(0.4f, 1.5f)
+                            .build(new ResourceLocation(TutorialMod.MOD_ID, "igor").toString()));
+
+    public static final RegistryObject<EntityType<SlavaEntity>> SLAVA =
+            ENTITY_TYPES.register("slava",
+                    () -> EntityType.Builder.of(SlavaEntity::new, MobCategory.MONSTER)
+                            .sized(0.4f, 1.5f)
+                            .build(new ResourceLocation(TutorialMod.MOD_ID, "slava").toString()));
+
+    public static final RegistryObject<EntityType<IliyaEntity>> ILIYA =
+            ENTITY_TYPES.register("iliya",
+                    () -> EntityType.Builder.of(IliyaEntity::new, MobCategory.MONSTER)
+                            .sized(0.4f, 1.5f)
+                            .build(new ResourceLocation(TutorialMod.MOD_ID, "iliya").toString()));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

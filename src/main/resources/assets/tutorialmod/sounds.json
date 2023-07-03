@@ -1,0 +1,98 @@
+{
+  "igor_saw": {
+    "subtitle": "sounds.tutorialmod.igor_saw",
+    "sounds": [
+      "tutorialmod:igor_saw"
+    ]
+  },
+  "igor_walk": {
+    "subtitle": "sounds.tutorialmod.igor_walk",
+    "sounds": [
+      {
+        "name": "tutorialmod:igor_walk",
+        "stream": true
+      }
+    ]
+  },
+  "igor_ambient": {
+    "subtitle": "sounds.tutorialmod.igor_ambient",
+    "sounds": [
+      "tutorialmod:igor_ambient"
+    ]
+  },
+  "igor_hurt": {
+    "subtitle": "sounds.tutorialmod.igor_hurt",
+    "sounds": [
+      "tutorialmod:igor_hurt"
+    ]
+  },
+  "igor_death": {
+    "subtitle": "sounds.tutorialmod.igor_death",
+    "sounds": [
+      "tutorialmod:igor_death"
+    ]
+  },
+  "slava_walk": {
+    "subtitle": "sounds.tutorialmod.slava_walk",
+    "sounds": [
+      {
+        "name": "tutorialmod:slava_walk",
+        "stream": true
+      }
+    ]
+  },
+  "slava_ambient": {
+    "subtitle": "sounds.tutorialmod.slava_ambient",
+    "sounds": [
+      "tutorialmod:slava_ambient"
+    ]
+  },
+  "slava_hurt": {
+    "subtitle": "sounds.tutorialmod.slava_hurt",
+    "sounds": [
+      "tutorialmod:slava_hurt"
+    ]
+  },
+  "slava_death": {
+    "subtitle": "sounds.tutorialmod.slava_death",
+    "sounds": [
+      "tutorialmod:slava_death"
+    ]
+  },
+  "iliya_walk": {
+    "subtitle": "sounds.tutorialmod.iliya_walk",
+    "sounds": [
+      {
+        "name": "tutorialmod:iliya_walk",
+        "stream": true
+      }
+    ]
+  },
+  "iliya_ambient": {
+    "subtitle": "sounds.tutorialmod.iliya_ambient",
+    "sounds": [
+      "tutorialmod:iliya_ambient"
+    ]
+  },
+  "iliya_hurt": {
+    "subtitle": "sounds.tutorialmod.iliya_hurt",
+    "sounds": [
+      "tutorialmod:iliya_hurt"
+    ]
+  },
+  "iliya_death": {
+    "subtitle": "sounds.tutorialmod.iliya_death",
+    "sounds": [
+      "tutorialmod:iliya_death"
+    ]
+  },
+  "iliya_agression": {
+    "subtitle": "sounds.tutorialmod.iliya_agression",
+    "sounds": [
+      {
+        "name": "tutorialmod:iliya_agression",
+        "stream": true
+      }
+    ]
+  }
+}

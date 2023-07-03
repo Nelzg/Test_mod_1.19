@@ -1,7 +1,6 @@
 package net.nelzg.tutorialmod.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -23,6 +22,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.nelzg.tutorialmod.TutorialMod;
 import net.nelzg.tutorialmod.entity.ModEntityTypes;
 import net.nelzg.tutorialmod.entity.custom.ChomperEntity;
+import net.nelzg.tutorialmod.entity.custom.IgorEntity;
+import net.nelzg.tutorialmod.entity.custom.RedBeastEntity;
 import net.nelzg.tutorialmod.item.ModItems;
 import net.nelzg.tutorialmod.networking.ModMessages;
 import net.nelzg.tutorialmod.networking.packet.ThirstDataSyncS2CPacket;
@@ -104,6 +105,10 @@ public class ModEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.CHOMPER.get(), ChomperEntity.setAttributes());
+            event.put(ModEntityTypes.RED_BEAST.get(), RedBeastEntity.setAttributes());
+            event.put(ModEntityTypes.IGOR.get(), IgorEntity.setAttributes());
+            event.put(ModEntityTypes.SLAVA.get(), IgorEntity.setAttributes());
+            event.put(ModEntityTypes.ILIYA.get(), IgorEntity.setAttributes());
         }
     }
 }

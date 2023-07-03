@@ -8,6 +8,10 @@
   "item.tutorialmod.blueberry_seeds": "Blueberry Seeds",
   "item.tutorialmod.kaupensword": "Kaupen Sword",
   "item.tutorialmod.chomper_spawn_egg": "Chomper Spawn Egg",
+  "item.tutorialmod.red_beast_spawn_egg": "Red Beast Spawn Egg",
+  "item.tutorialmod.igor_spawn_egg": "Igor Spawn Egg",
+  "item.tutorialmod.slava_spawn_egg": "Slava Spawn Egg",
+  "item.tutorialmod.iliya_spawn_egg": "Iliya Spawn Egg",
 
   "block.tutorialmod.zircon_block": "Block of Zircon",
   "block.tutorialmod.zircon_ore": "Zircon Ore",
@@ -23,10 +27,31 @@
   "itemGroup.tutorialtab": "Zircon Tutorial Tab",
 
   "entity.minecraft.villager.tutorialmod.jumpy_master": "Jumpy Master",
+  "entity.tutorialmod.red_beast": "Red Beast",
+  "entity.tutorialmod.igor": "Igor",
+  "entity.tutorialmod.slava": "Slava",
+  "entity.tutorialmod.iliya": "Iliya",
 
   "key.category.tutorialmod.tutorial": "Tutorial Mod",
   "key.tutorialmod.drink_water": "Drink Water",
 
   "message.tutorialmod.drink_water": "Drink Water",
-  "message.tutorialmod.no_water": "No Water Nearby"
+  "message.tutorialmod.no_water": "No Water Nearby",
+
+  "sounds.tutorialmod.igor_saw": "Igor Saw You Sound",
+  "sounds.tutorialmod.igor_walk": "Igor Walking Sound",
+  "sounds.tutorialmod.igor_ambient": "Igor Ambient Sound",
+  "sounds.tutorialmod.igor_hurt": "Igor Hurt Sound",
+  "sounds.tutorialmod.igor_death": "Igor Death Sound",
+  "sounds.tutorialmod.slava_saw": "Slava Saw You Sound",
+  "sounds.tutorialmod.slava_walk": "Slava Walking Sound",
+  "sounds.tutorialmod.slava_ambient": "Slava Ambient Sound",
+  "sounds.tutorialmod.slava_hurt": "Slava Hurt Sound",
+  "sounds.tutorialmod.slava_death": "Slava Death Sound",
+  "sounds.tutorialmod.iliya_saw": "Iliya Saw You Sound",
+  "sounds.tutorialmod.iliya_walk": "Iliya Walking Sound",
+  "sounds.tutorialmod.iliya_ambient": "Iliya Ambient Sound",
+  "sounds.tutorialmod.iliya_hurt": "Iliya Hurt Sound",
+  "sounds.tutorialmod.iliya_death": "Iliya Death Sound",
+  "sounds.tutorialmod.iliya_agression": "Iliya Agression Sound"
 }

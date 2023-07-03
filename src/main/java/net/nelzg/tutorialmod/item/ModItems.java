@@ -46,6 +46,21 @@ public class ModItems {
     public static final RegistryObject<Item> CHOMPER_SPAWN_EGG = ITEMS.register("chomper_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.CHOMPER, 0x22b341, 0x19732e,
                     new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(64)));
+    public static final RegistryObject<Item> RED_BEAST_SPAWN_EGG = ITEMS.register("red_beast_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.RED_BEAST, 0x22b341, 0x19732e,
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(64)));
+
+    public static final RegistryObject<Item> IGOR_SPAWN_EGG = ITEMS.register("igor_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.IGOR, 0x22b341, 0x19732e,
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(64)));
+
+    public static final RegistryObject<Item> SLAVA_SPAWN_EGG = ITEMS.register("slava_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.SLAVA, 0x22b341, 0x19732e,
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(64)));
+
+    public static final RegistryObject<Item> ILIYA_SPAWN_EGG = ITEMS.register("iliya_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.ILIYA, 0x22b341, 0x19732e,
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(64)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
