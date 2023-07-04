@@ -53,5 +53,7 @@
   "sounds.tutorialmod.iliya_ambient": "Iliya Ambient Sound",
   "sounds.tutorialmod.iliya_hurt": "Iliya Hurt Sound",
   "sounds.tutorialmod.iliya_death": "Iliya Death Sound",
-  "sounds.tutorialmod.iliya_agression": "Iliya Agression Sound"
+  "sounds.tutorialmod.iliya_agression": "Iliya Agression Sound",
+  "sounds.tutorialmod.iliya_mount_idle": "Iliya Mount Idle Sound",
+  "sounds.tutorialmod.iliya_mount_ride": "Iliya Mount Ride Sound"
 }

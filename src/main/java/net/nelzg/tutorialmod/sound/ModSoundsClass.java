@@ -51,6 +51,12 @@ public class ModSoundsClass {
     public static final RegistryObject<SoundEvent> ILIYA_AGRESSION =
             registerSoundEvent("iliya_agression");
 
+    public static final RegistryObject<SoundEvent> ILIYA_MOUNT_IDLE =
+            registerSoundEvent("iliya_mount_idle");
+
+    public static final RegistryObject<SoundEvent> ILIYA_MOUNT_RIDE =
+            registerSoundEvent("iliya_mount_ride");
+
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(TutorialMod.MOD_ID, name)));
     }

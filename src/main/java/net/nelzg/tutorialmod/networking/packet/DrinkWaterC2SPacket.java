@@ -58,7 +58,6 @@ public class DrinkWaterC2SPacket {
                             .withStyle(ChatFormatting.AQUA));
                     ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), player);
                 });
-
             }
 
         });

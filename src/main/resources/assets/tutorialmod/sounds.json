@@ -94,5 +94,17 @@
         "stream": true
       }
     ]
+  },
+  "iliya_mount_idle": {
+    "subtitle": "sounds.tutorialmod.iliya_mount_idle",
+    "sounds": [
+      "tutorialmod:iliya_mount_idle"
+    ]
+  },
+  "iliya_mount_ride": {
+    "subtitle": "sounds.tutorialmod.iliya_mount_ride",
+    "sounds": [
+      "tutorialmod:iliya_mount_ride"
+    ]
   }
 }

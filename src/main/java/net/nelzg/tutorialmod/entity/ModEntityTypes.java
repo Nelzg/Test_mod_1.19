@@ -8,11 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.nelzg.tutorialmod.TutorialMod;
-import net.nelzg.tutorialmod.entity.custom.ChomperEntity;
-import net.nelzg.tutorialmod.entity.custom.IgorEntity;
-import net.nelzg.tutorialmod.entity.custom.SlavaEntity;
-import net.nelzg.tutorialmod.entity.custom.IliyaEntity;
-import net.nelzg.tutorialmod.entity.custom.RedBeastEntity;
+import net.nelzg.tutorialmod.entity.custom.*;
 
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -47,6 +43,12 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(IliyaEntity::new, MobCategory.MONSTER)
                             .sized(0.4f, 1.5f)
                             .build(new ResourceLocation(TutorialMod.MOD_ID, "iliya").toString()));
+
+    public static final RegistryObject<EntityType<IliyaMountEntity>> ILIYA_MOUNT =
+            ENTITY_TYPES.register("iliya_mount",
+                    () -> EntityType.Builder.of(IliyaMountEntity::new, MobCategory.AMBIENT)
+                            .sized(0.4f, 1.5f)
+                            .build(new ResourceLocation(TutorialMod.MOD_ID, "iliya_mount").toString()));
 
 
     public static void register(IEventBus eventBus) {

@@ -20,6 +20,7 @@ import net.nelzg.tutorialmod.entity.client.RedBeastRenderer;
 import net.nelzg.tutorialmod.entity.client.IgorRenderer;
 import net.nelzg.tutorialmod.entity.client.SlavaRenderer;
 import net.nelzg.tutorialmod.entity.client.IliyaRenderer;
+import net.nelzg.tutorialmod.entity.client.IliyaMountRenderer;
 import net.nelzg.tutorialmod.fluid.ModFluidTypes;
 import net.nelzg.tutorialmod.fluid.ModFluids;
 import net.nelzg.tutorialmod.item.ModItems;
@@ -92,6 +93,7 @@ public class TutorialMod
             EntityRenderers.register(ModEntityTypes.IGOR.get(), IgorRenderer::new);
             EntityRenderers.register(ModEntityTypes.SLAVA.get(), SlavaRenderer::new);
             EntityRenderers.register(ModEntityTypes.ILIYA.get(), IliyaRenderer::new);
+            EntityRenderers.register(ModEntityTypes.ILIYA_MOUNT.get(), IliyaMountRenderer::new);
         }
     }
 }

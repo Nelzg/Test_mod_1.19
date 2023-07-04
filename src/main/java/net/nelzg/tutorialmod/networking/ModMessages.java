@@ -7,10 +7,7 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.nelzg.tutorialmod.TutorialMod;
-import net.nelzg.tutorialmod.networking.packet.DrinkWaterC2SPacket;
-import net.nelzg.tutorialmod.networking.packet.EnergySyncS2CPacket;
-import net.nelzg.tutorialmod.networking.packet.ExampleC2SPacket;
-import net.nelzg.tutorialmod.networking.packet.ThirstDataSyncS2CPacket;
+import net.nelzg.tutorialmod.networking.packet.*;
 
 public class ModMessages {
 
@@ -53,6 +50,12 @@ public class ModMessages {
                 .decoder(EnergySyncS2CPacket::new)
                 .encoder(EnergySyncS2CPacket::toBytes)
                 .consumerMainThread(EnergySyncS2CPacket::handle)
+                .add();
+
+        net.messageBuilder(VerticalMovementC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(VerticalMovementC2SPacket::new)
+                .encoder(VerticalMovementC2SPacket::toBytes)
+                .consumerMainThread(VerticalMovementC2SPacket::handle)
                 .add();
     }
 
